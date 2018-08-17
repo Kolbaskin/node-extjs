@@ -18,62 +18,34 @@ Installation
 
 	npm install node-extjs-core
 
-Usage for core
+Usage 
 --------------
 
 	require("node-extjs-core");
-
-	console.log(Ext.getVersion().version);
-
-Usage for extended (default)
-----------------------------
-
-	require("node-extjs-core");
-
-	console.log(Ext.getVersion().version);
 	
-	Ext.define("User", {
-	    extend: 'Ext.data.Model',
+	Ext.BaseDir = __dirname;
+
+    Ext.Loader.setConfig({
+        enabled: true,
+        paths: {
+            Lib: Ext.BaseDir + '/lib',
+        }
+    });
     
-		fields: [
-			{name: 'name',     type: 'string'},
-			{name: 'age',      type: 'int'},
-			{name: 'phone',    type: 'string'},
-			{name: 'gender',   type: 'string'},
-			{name: 'username', type: 'string'},
-			{name: 'alive',    type: 'boolean', defaultValue: true}
-		],
-	
-		validations: [
-			{type: 'presence',  field: 'age'},
-			{type: 'length',    field: 'name',     min: 2},
-			{type: 'inclusion', field: 'gender',   list: ['Male', 'Female']},
-			{type: 'exclusion', field: 'username', list: ['Admin', 'Operator']},
-			{type: 'format',    field: 'username', matcher: /([a-z]+)[0-9]{2,3}/}
-		],
-		
-		changeName: function() {
-			var oldName = this.get('name'),
-				newName = oldName + " The Barbarian";
-	
-			this.set('name', newName);
-		}
-	});
+    const MyClass = Ext.create('Lib.MyClass');
+    
+    MyClass.doSomething(...).then(...)
 
-	var user = Ext.create("User", {
-		name : 'Conan',
-		age  : 24,
-		phone: '555-555-5555'
-	});
-	
-	user.changeName();
-	
-	console.log(user.get('name')); //returns "Conan The Barbarian"
-	
-	var errors = user.validate();
-	
-	console.log(errors);
-
+lib/MyClass.js 
+--------------
+    Ext.define('Lib.MyClass', {
+        
+        async doSomething(params) {
+            .....
+            return <result>
+        }
+        
+    })
 
 License
 -------
