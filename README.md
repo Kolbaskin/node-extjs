@@ -10,23 +10,16 @@ but work.
 
 This utilizes Node's built-in CommonJS loader system to properly load the necessary ExtJS source files. This retains the full stack trace in errors (other implementations have used eval to load the library).
 
-Includes 2 different implementations:
-
-node-extjs-core: just the core library
-
-node-extjs: the core library plus the models, controllers, stores, data access stuff
 
 Installation
 ------------
 
-(Requires NodeJS 0.6.x)
+(Requires NodeJS 0.6.x or higher)
 
-	npm install node-extjs
+	npm install node-extjs-core
 
 Usage for core
 --------------
-
-(Requires NodeJS 0.6.x)
 
 	require("node-extjs-core");
 
@@ -35,7 +28,7 @@ Usage for core
 Usage for extended (default)
 ----------------------------
 
-	require("node-extjs");
+	require("node-extjs-core");
 
 	console.log(Ext.getVersion().version);
 	

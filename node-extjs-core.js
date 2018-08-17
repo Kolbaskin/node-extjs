@@ -47,9 +47,7 @@ var fileList = [
 utils.injectExtJS(fileList);
 
 var window = {
-    status: __defineSetter__("status", function(debugStatusMsg){
-        console.log(debugStatusMsg);
-    })
+
 }
 
 console.log(String.format("ExtJS {0} - core loaded", Ext.getVersion()));

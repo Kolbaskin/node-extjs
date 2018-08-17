@@ -1,15 +1,40 @@
 {
-  "author": "Craig Walker <craig.walker@me.com>",
-  "name": "node-extjs",
-  "main": "node-extjs",
-  "homepage": "https://github.com/storminwalker/node-extjs",
-  "description": "ExtJS module for Node",
-  "version": "1.0.1",
+  "author": {
+    "name": "Maxim Tushev",
+    "email": "maximtushev@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Kolbaskin/node-extjs/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "ExtJS core for Nodejs",
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "homepage": "https://github.com/Kolbaskin/node-extjs",
+  "main": "node-extjs-core",
+  "name": "node-extjs-core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storminwalker/node-extjs"
+    "url": "git+https://github.com/Kolbaskin/node-extjs.git"
   },
-  "engines": {
-    "node":">= 0.4.0 < 0.7.0" 
-  }
+  "version": "0.0.1",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">= 0.4.0 < 0.7.0"
+      },
+      "pkgid": "node-extjs@1.0.1"
+    },
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">= 0.4.0 < 0.7.0"
+      },
+      "pkgid": "node-extjs@1.0.1"
+    }
+  ],
+  "license": "LGPL-2"
 }
